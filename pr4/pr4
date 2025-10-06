@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <unistd.h>
+#include <signal.h>
+#include <string.h>
+
+//пустой обработчик сигнала
+void handler(int sig) {
+}
+
+int main() {
+    //обработчик для SIGALRM
+    signal(SIGALRM, handler);
+
+    alarm(1);
+
+    errno = 0; 
+    unsigned int remaining = sleep(10);
+
+    if (errno == EINTR) {
+        fprintf(stderr, "Ошибка: %s\n", strerror(errno));
+        perror("main");
+    } else {
+        printf("sleep завершился без прерывания\n");
+    }
+
+    return 0;
+}
+
