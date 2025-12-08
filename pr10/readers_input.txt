@@ -1,0 +1,10 @@
+reader_01 1001
+reader_02 1002
+reader_03 1003
+reader_04 1004
+reader_05 1005
+reader_06 1006
+reader_07 1007
+reader_08 1008
+reader_09 1009
+reader_10 1010
